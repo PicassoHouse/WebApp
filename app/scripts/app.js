@@ -3,11 +3,10 @@
 // Declare app level module which depends on views, and components
 angular.module('picassohouse', [
   'ngRoute',
-  'picassohouse.view1',
-  'picassohouse.view2'
+  'picassohouse.dashboard'
 ]).
 config(['$locationProvider', '$routeProvider', ($locationProvider, $routeProvider) => {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/dashboard'});
 }]);
