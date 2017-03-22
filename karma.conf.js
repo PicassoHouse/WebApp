@@ -8,11 +8,12 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'app/scripts/components/**/*.js',
-      'view*/**/*.js'
+      'dist/all.min.js',
+      'tests/**/*.js'
     ],
 
     autoWatch: true,
+    singleRun: true,
 
     frameworks: ['jasmine'],
 

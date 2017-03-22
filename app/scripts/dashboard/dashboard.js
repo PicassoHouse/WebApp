@@ -9,8 +9,10 @@ angular.module('picassohouse.dashboard', ['ngRoute'])
     });
 }])
 
-.controller('DashboardCtrl', [() => {
+.controller('DashboardCtrl', ['PHApiService', (PHApiService) => {
 
-    console.log("something");
+    PHApiService.get('/user')
+        .then(console.log)
+        .catch(console.log);
 
 }]);
