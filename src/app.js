@@ -1,4 +1,8 @@
 import angular from 'angular'
+import angularAnimate from 'angular-animate'
+import angularAria from 'angular-aria'
+import toastr from 'angular-toastr'
+
 import uiRouter from 'angular-ui-router'
 import angularCookies from 'angular-cookies'
 import Restangular from 'restangular'
@@ -19,6 +23,9 @@ export default angular
         uiRouter,
         angularCookies,
         Restangular,
+        angularAnimate,
+        angularAria,
+        toastr,
         CoreServices.name,
         Login.name,
         Dashboard.name
