@@ -20,6 +20,7 @@
 
 
                 <button type="submit"
+                        ng-disabled="$ctrl.credentials.password < 6 || $ctrl.credentials.username.length < 6"
                         class="btn btn-raised btn-warning">Entrar</button>
         </form>
     </div>
