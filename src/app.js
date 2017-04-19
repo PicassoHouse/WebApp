@@ -13,6 +13,7 @@ import CoreServices from './core/CoreServices.js'
 
 import Login from './pages/login/login.js'
 import Dashboard from './pages/dashboard/dashboard.js'
+import Users from './pages/users/users.js'
 
 import lodash from 'lodash'
 
@@ -28,7 +29,8 @@ export default angular
         toastr,
         CoreServices.name,
         Login.name,
-        Dashboard.name
+        Dashboard.name,
+        Users.name
     ])
     .constant('apiUrl', 'http://localhost:3000/api')
     .constant('locale', 'pt_BR')

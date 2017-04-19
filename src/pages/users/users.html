@@ -1,0 +1,108 @@
+<h1 xmlns="http://www.w3.org/1999/html">Usuários</h1>
+
+<div class="row">
+    <div class="col-md-5">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading"><h4>Adicionar Usuário</h4></div>
+            <div class="panel-body">
+
+                <fieldset>
+                    <div class="form-group has-warning">
+                        <label for="inputUsername" class="col-md-4 control-label">Usuário</label>
+
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputUsername" placeholder="joaodasilva" required>
+                        </div>
+                    </div><br/>
+                    <div class="form-group has-warning">
+                        <label for="inputName" class="col-md-4 control-label">Nome</label>
+
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputName" placeholder="João da Silva">
+                        </div>
+                    </div><br/>
+                    <div class="form-group has-warning">
+                        <label for="inputpassword" class="col-md-4 control-label">Senha</label>
+
+                        <div class="col-md-8">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Senha" required>
+                        </div>
+                    </div><br/>
+                    <div class="form-group has-warning">
+                        <label class="col-md-4  control-label">Categoria</label>
+
+                        <div class="col-md-8">
+                            <div class="radio radio-primary">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                    Administrador
+                                </label>
+                            </div>
+                            <div class="radio radio-primary">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    Morador
+                                </label>
+                            </div>
+                            <div class="radio radio-primary">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option2" checked="checked">
+                                    Convidado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-warning">
+                        <label for="inputAccessCode" class="col-md-4 control-label">Código de Acesso</label>
+
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputAccessCode" placeholder="C@D3">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-default">Cancel</button>
+                            <button type="submit" class="btn btn-warning">Cadastrar</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-6 col-md-offset-1 list-group row">
+        <div class="panel panel-warning">
+            <div class="panel-heading"><h4>Usuários Cadastrados</h4></div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="form-group has-warning">
+                            <input type="text" class="form-control" placeholder="Buscar..." ng-model="searchTerm">
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-repeat="u in $ctrl.users | filter : searchTerm">
+                    <div class="list-group-item">
+                        <div class="row-action-primary"><i class="material-icons">person</i></div>
+                        <!--<div class="row-picture">-->
+                            <!--<img class="circle" ng-src="{{u.imageUrl}}">-->
+                        <!--</div>-->
+                        <div class="row-content">
+                            <h4 class="list-group-item-heading">{{u.displayName || u.username}} <small><i>{{u.username}}</i></small></h4>
+                            <p class="list-group-item-text">{{u.role}}</p>
+                            <div class="action-secondary"><button class="btn btn-danger btn-xs btn-raised"><i class="material-icons">delete</i> Remover</button></div>
+                        </div>
+                    </div>
+                    <div class="list-group-separator"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
