@@ -3,6 +3,7 @@ import angularAnimate from 'angular-animate'
 import angularAria from 'angular-aria'
 import toastr from 'angular-toastr'
 import uiBootstrap from 'angular-ui-bootstrap'
+import Charts from 'angular-chart.js'
 
 import uiRouter from 'angular-ui-router'
 import angularCookies from 'angular-cookies'
@@ -16,6 +17,7 @@ import Login from './pages/login/login.js'
 import Dashboard from './pages/dashboard/dashboard.js'
 import Users from './pages/users/users.js'
 import AccessHistory from './pages/accesshistory/accesshistory.js'
+import LightsInfo from './pages/lightsinfo/lightsinfo'
 
 import lodash from 'lodash'
 
@@ -30,11 +32,13 @@ export default angular
         angularAnimate,
         angularAria,
         toastr,
+        Charts,
         CoreServices.name,
         Login.name,
         Dashboard.name,
         Users.name,
-        AccessHistory.name
+        AccessHistory.name,
+        LightsInfo.name
     ])
     .constant('apiUrl', 'http://localhost:3000/api')
     .constant('locale', 'pt_BR')
