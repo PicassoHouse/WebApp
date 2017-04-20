@@ -21,4 +21,12 @@ export default class UsersController {
         }).catch(err => this.toastr.error(err));
     }
 
+    deleteUser(user) {
+        user.remove()
+            .then((res) => {
+                this.users = this.users.filter(el => el != user);
+                this.toastr.success('Usuário removido com sucesso!');
+            }).catch(err => this.toastr.error('Não foi possível remover usuário!'));
+    }
+
 }

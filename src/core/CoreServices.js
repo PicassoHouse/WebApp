@@ -8,6 +8,7 @@ export default angular.module('core.services', [])
     .factory('Api', ['Restangular', '$cookies', '$http', 'apiUrl', (Restangular, cookies, $http, apiUrl) => {
         return Restangular.withConfig((RestangularConfigurer) => {
             RestangularConfigurer.setBaseUrl(apiUrl);
+            RestangularConfigurer.setRestangularFields({ id: "_id" });
             RestangularConfigurer.setErrorInterceptor((response, deferred, responseHandler) => {
 
                 if( response.status === 401 || response.status === 403) {

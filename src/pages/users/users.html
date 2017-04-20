@@ -96,7 +96,12 @@
                         <div class="row-content">
                             <h4 class="list-group-item-heading">{{u.displayName || u.username}} <small><i>{{u.username}}</i></small></h4>
                             <p class="list-group-item-text">{{u.role}}</p>
-                            <div class="action-secondary"><button class="btn btn-danger btn-xs btn-raised"><i class="material-icons">delete</i> Remover</button></div>
+                            <div class="action-secondary">
+                                <button ng-click="$ctrl.deleteUser(u)"
+                                        class="btn btn-danger btn-xs btn-raised">
+                                    <i class="material-icons">delete</i> Remover
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="list-group-separator"></div>
