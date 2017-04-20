@@ -15,6 +15,7 @@ import CoreServices from './core/CoreServices.js'
 import Login from './pages/login/login.js'
 import Dashboard from './pages/dashboard/dashboard.js'
 import Users from './pages/users/users.js'
+import AccessHistory from './pages/accesshistory/accesshistory.js'
 
 import lodash from 'lodash'
 
@@ -32,7 +33,8 @@ export default angular
         CoreServices.name,
         Login.name,
         Dashboard.name,
-        Users.name
+        Users.name,
+        AccessHistory.name
     ])
     .constant('apiUrl', 'http://localhost:3000/api')
     .constant('locale', 'pt_BR')
