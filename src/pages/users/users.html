@@ -6,27 +6,41 @@
         <div class="panel panel-warning">
             <div class="panel-heading"><h4>Adicionar Usuário</h4></div>
             <div class="panel-body">
-
+                <form ng-submit="$ctrl.addUser(userModel)">
                 <fieldset>
                     <div class="form-group has-warning">
                         <label for="inputUsername" class="col-md-4 control-label">Usuário</label>
 
                         <div class="col-md-8">
-                            <input type="text" class="form-control" id="inputUsername" placeholder="joaodasilva" required>
+                            <input ng-model="userModel.username"
+                                   type="text"
+                                   class="form-control"
+                                   id="inputUsername"
+                                   placeholder="joaodasilva"
+                                   required>
                         </div>
                     </div><br/>
                     <div class="form-group has-warning">
                         <label for="inputName" class="col-md-4 control-label">Nome</label>
 
                         <div class="col-md-8">
-                            <input type="text" class="form-control" id="inputName" placeholder="João da Silva">
+                            <input ng-model="userModel.displayName"
+                                   type="text"
+                                   class="form-control"
+                                   id="inputName"
+                                   placeholder="João da Silva">
                         </div>
                     </div><br/>
                     <div class="form-group has-warning">
                         <label for="inputpassword" class="col-md-4 control-label">Senha</label>
 
                         <div class="col-md-8">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Senha" required>
+                            <input ng-model="userModel.password"
+                                   type="password"
+                                   class="form-control"
+                                   id="inputPassword"
+                                   placeholder="Senha"
+                                   required>
                         </div>
                     </div><br/>
                     <div class="form-group has-warning">
@@ -35,19 +49,32 @@
                         <div class="col-md-8">
                             <div class="radio radio-primary">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                    <input ng-model="userModel.role"
+                                           type="radio"
+                                           name="role"
+                                           id="optionsRadios1"
+                                           value="admin" required>
                                     Administrador
                                 </label>
                             </div>
                             <div class="radio radio-primary">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <input ng-model="userModel.role"
+                                           type="radio"
+                                           name="role"
+                                           id="optionsRadios2"
+                                           value="user" required>
                                     Morador
                                 </label>
                             </div>
                             <div class="radio radio-primary">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option2" checked="checked">
+                                    <input ng-model="userModel.role"
+                                           type="radio"
+                                           name="role"
+                                           id="optionsRadios3"
+                                           value="guest"
+                                           checked="checked" required>
                                     Convidado
                                 </label>
                             </div>
@@ -57,19 +84,25 @@
                         <label for="inputAccessCode" class="col-md-4 control-label">Código de Acesso</label>
 
                         <div class="col-md-8">
-                            <input type="text" class="form-control" id="inputAccessCode" placeholder="C@D3">
+                            <input ng-model="userModel.auth_code"
+                                   type="text"
+                                   class="form-control"
+                                   id="inputAccessCode"
+                                   placeholder="C@D3">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="pull-right">
-                            <button type="button" class="btn btn-default">Cancel</button>
-                            <button type="submit" class="btn btn-warning">Cadastrar</button>
+                            <button type="reset" class="btn btn-default">Cancel</button>
+                            <button ng-disabled="userModel.username.length < 6 || userModel.password.length < 6 || userModel.role == ''"
+                                    type="submit"
+                                    class="btn btn-warning">Cadastrar</button>
                         </div>
                     </div>
 
                 </fieldset>
-
+                </form>
             </div>
         </div>
 
