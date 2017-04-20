@@ -1,6 +1,6 @@
 
 import UsersController from './users.controller.js'
-
+import UserConfirmDeleteCtrl from './users.dialog-delete.controller.js'
 
 export default angular.module('users', [])
     .config(['$stateProvider', ($stateProvider) => {
@@ -11,4 +11,5 @@ export default angular.module('users', [])
                 controller: 'UsersController as $ctrl'
             });
     }])
-    .controller('UsersController', UsersController);
+    .controller('UsersController', UsersController)
+    .controller('UserConfirmDeleteCtrl', UserConfirmDeleteCtrl);

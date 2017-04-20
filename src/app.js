@@ -2,6 +2,7 @@ import angular from 'angular'
 import angularAnimate from 'angular-animate'
 import angularAria from 'angular-aria'
 import toastr from 'angular-toastr'
+import uiBootstrap from 'angular-ui-bootstrap'
 
 import uiRouter from 'angular-ui-router'
 import angularCookies from 'angular-cookies'
@@ -22,6 +23,7 @@ global._ = lodash;
 export default angular
     .module('picassohouse', [
         uiRouter,
+        uiBootstrap,
         angularCookies,
         Restangular,
         angularAnimate,

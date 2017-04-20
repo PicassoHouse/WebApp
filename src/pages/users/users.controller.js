@@ -1,13 +1,14 @@
 
 export default class UsersController {
 
-    constructor($state, Api, toastr) {
+    constructor($state, $uibModal, Api, toastr) {
         "ngInject";
 
         //dependencies
         this.$state = $state;
         this.Api = Api;
         this.toastr = toastr;
+        this.$uibModal = $uibModal;
 
         //pproperties
         this.users = []; 
@@ -30,11 +31,24 @@ export default class UsersController {
     }
 
     deleteUser(user) {
-        user.remove()
-            .then((res) => {
-                this.users = this.users.filter(el => el != user);
-                this.toastr.success('Usuário removido com sucesso!');
-            }).catch(err => this.toastr.error('Não foi possível remover usuário!'));
+        const confirm = this.$uibModal.open({
+            animation: true,
+            templateUrl: 'userModalConfirmDelete.html',
+            controller: 'UserConfirmDeleteCtrl',
+            controllerAs : '$ctrlDialog',
+            bindToController : true,
+            resolve: {
+                user : user
+            }
+        });
+
+        confirm.result.then(() => {
+            user.remove()
+                .then(() => {
+                    this.users = this.users.filter(el => el != user);
+                    this.toastr.success('Usuário removido com sucesso!');
+                }).catch(err => this.toastr.error('Não foi possível remover usuário!'));
+        });
     }
 
     addUser(userModel) {
