@@ -10,10 +10,10 @@
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="javascript:void(0)" ui-sref=".dashboard"><i class="material-icons">apps</i> Dashboard</a></li>
-                <li><a href="javascript:void(0)"><i class="material-icons">show_chart</i> Informações de Consumo</a></li>
-                <li><a href="javascript:void(0)"><i class="material-icons">history</i> Histórico de Acessos</a></li>
-                <li><a href="javascript:void(0)" ui-sref=".users"><i class="material-icons">group</i> Usuários</a></li>
+                <li ui-sref-active="active"><a href="javascript:void(0)" ui-sref=".dashboard"><i class="material-icons">apps</i> Dashboard</a></li>
+                <li ui-sref-active="active"><a href="javascript:void(0)"><i class="material-icons">show_chart</i> Informações de Consumo</a></li>
+                <li ui-sref-active="active"><a href="javascript:void(0)"><i class="material-icons">history</i> Histórico de Acessos</a></li>
+                <li ui-sref-active="active"><a href="javascript:void(0)" ui-sref=".users"><i class="material-icons">group</i> Usuários</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="javascript:void(0)" ng-click="authLogout()"><i class="material-icons">power_settings_new</i> Sair</a></li>
