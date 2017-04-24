@@ -1,7 +1,6 @@
 
 import DashboardController from './dashboard.controller.js'
 
-
 export default angular.module('dashboard', [])
     .config(['$stateProvider', ($stateProvider) => {
         $stateProvider

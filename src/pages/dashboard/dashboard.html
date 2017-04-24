@@ -1,5 +1,55 @@
-<h1>Dashboard</h1>
-<p>{{$ctrl.message}}</p>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="jumbotron">
+            <h2>House</h2>
+            <div class="togglebutton">
+                <label>
+                    <input class="" type="checkbox" ng-model="$ctrl.isHomeLocked" ng-change="$ctrl.lockHome(!$ctrl.isHomeLocked)">
+                    {{$ctrl.isHomeLocked ? 'Trancada' : 'Destrancada'}}
+                </label>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <h2>Garagem</h2>
+            <div class="btn-group btn-group-justified btn-group-raised">
+                <a href="javascript:void(0)" class="btn btn-warning" ng-click="$ctrl.openGarage(true)">Abrir</a>
+                <a href="javascript:void(0)" class="btn " ng-click="$ctrl.openGarage(false)">Fechar</a>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <h2>Janelas</h2>
+            <div class="btn-group btn-group-justified btn-group-raised">
+                <a href="javascript:void(0)" class="btn btn-warning" ng-click="$ctrl.openWindows(true)">Abrir todas</a>
+                <a href="javascript:void(0)" class="btn " ng-click="$ctrl.openWindows(false)">Fechar todas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="jumbotron">
+        <h2>Luzes</h2>
+            <div class="list-group">
+            <div ng-repeat="r in $ctrl.rooms">
+                <div class="list-group-item">
+                    <div class="row-action-primary">
+                        <i class="material-icons">folder</i>
+                    </div>
+                    <div class="row-content">
+                        <div class="action-secondary">
+                            <div class="togglebutton">
+                                <label>
+                                    <input type="checkbox" ng-model="r.isLightOn" ng-change="$ctrl.switchLightStatus(r)">
+                                    {{r.isLightOn ? 'ON' : 'OFF'}}
+                                </label>
+                            </div>
+                        </div>
+                        <h4 class="list-group-item-heading">{{r.title}}</h4>
+                        <p class="list-group-item-text">{{r.description}}</p>
+                    </div>
+                </div>
+                <div class="list-group-separator"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 
-
-<button ng-click="$ctrl.showAlert()" class="btn btn-raised btn-success">Alert</button>

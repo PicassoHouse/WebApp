@@ -7,7 +7,7 @@ describe('picassohouse.dashboard module', () => {
     describe('dashboard controller', () => {
 
         it('should to be defined', inject(($controller) => {
-            const dashboardCtrl= $controller('DashboardCtrl');
+            const dashboardCtrl= $controller('DashboardController');
             expect(dashboardCtrl).toBeDefined();
         }));
 
