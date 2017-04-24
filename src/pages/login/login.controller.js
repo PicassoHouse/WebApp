@@ -15,10 +15,10 @@ export default class LoginController {
     }
 
     login () {
-        this.Api.service("auth").post(this.credentials).then((res) => {
-            if (!res.success) throw res.message;
+        this.Api.service("auth").post(this.credentials).then( token => {
+            if (!token || token === "") throw "Usuário ou senha inválido!";
 
-            localStorage.setItem("token", res.access_token);
+            localStorage.setItem("token", token);
             this.$state.go('app.dashboard');
         }).catch(err => this.toastr.error(err));
 
