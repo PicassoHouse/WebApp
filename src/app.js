@@ -40,7 +40,8 @@ export default angular
         AccessHistory.name,
         LightsInfo.name
     ])
-    .constant('apiUrl', 'http://104.236.79.15:8080/api')
+    //.constant('apiUrl', 'http://104.236.79.15:8080/api')
+    .constant('apiUrl', 'http://localhost:3000/api')
     .constant('locale', 'pt_BR')
     .config(AppRoutes)
     .run(AuthMiddleware);

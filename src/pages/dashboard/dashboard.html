@@ -4,7 +4,7 @@
             <h2>House</h2>
             <div class="togglebutton">
                 <label>
-                    <input class="" type="checkbox" ng-model="$ctrl.isHomeLocked" ng-change="$ctrl.lockHome(!$ctrl.isHomeLocked)">
+                    <input class="" type="checkbox" ng-model="$ctrl.isHomeLocked" ng-change="$ctrl.lockHome($ctrl.isHomeLocked)">
                     {{$ctrl.isHomeLocked ? 'Trancada' : 'Destrancada'}}
                 </label>
             </div>
@@ -42,7 +42,7 @@
                                 </label>
                             </div>
                         </div>
-                        <h4 class="list-group-item-heading">{{r.title}}</h4>
+                        <h4 class="list-group-item-heading">{{r.title}} <small><i>{ {{r.room_id}} }</i></small></h4>
                         <p class="list-group-item-text">{{r.description}}</p>
                     </div>
                 </div>

@@ -22,7 +22,7 @@ export default class DashboardController {
 
     switchLightStatus(room) {
         this.Api.all("house").customPOST({}, "turnlighton", {
-            room_id : room._id,
+            room_id : room.room_id,
             on : room.isLightOn
         }, {});
     }
